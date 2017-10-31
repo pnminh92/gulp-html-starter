@@ -84,6 +84,7 @@ gulp.task('js', ['standard', 'bundle']);
 gulp.task('serve', function () {
   browserSync.init({ server: config.public });
   gulp.watch(`${config.src}/html/**/*.ejs`, ['reload-html']);
+  gulp.watch(`${config.src}/scss/**/*.scss`, ['css']);
   watchBundler();
 });
 

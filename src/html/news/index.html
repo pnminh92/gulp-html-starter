@@ -1,0 +1,18 @@
+{% extends 'layout/_main.html' %}
+
+{%
+  set meta = {
+    title: 'News',
+    description: "News's description",
+    og: {
+      title: 'News',
+      url: 'https://example.com/news',
+      description: "News's description",
+      image: 'https://example.com/img/og.png'
+    }
+  }
+%}
+
+{% block content %}
+<h1>News</h1>
+{% endblock %}

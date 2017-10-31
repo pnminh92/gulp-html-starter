@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+
+@import 'minireset';
+
+$color-black: #333;
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+$letter-spacing-base: .04em;
+$font-size-base: 16px;
+
+body {
+  color: $color-black;
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

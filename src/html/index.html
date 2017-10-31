@@ -1,0 +1,18 @@
+{% extends 'layout/_main.html' %}
+
+{%
+  set meta = {
+    title: 'Home',
+    description: "Home's description",
+    og: {
+      title: 'Home',
+      url: 'https://example.com',
+      description: "Home's description",
+      image: 'https://example.com/img/og.png'
+    }
+  }
+%}
+
+{% block content %}
+<h1>Index</h1>
+{% endblock %}

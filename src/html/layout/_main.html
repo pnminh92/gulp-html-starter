@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    {%
+      set localMeta = meta | default({
+        title: 'gulp-html-starter',
+        description: 'A starter kit for speeding markup',
+        og: {
+          title: 'gulp-html-starter',
+          url: 'https://github.com/wofiminh/gulp-html-starter',
+          description: 'A starter kit for speeding markup',
+          image: 'https://github.com/wofiminh/gulp-html-starter'
+        }
+      })
+    %}
+
+    <title>{{ localMeta.title }}</title>
+    <meta name="description" content="{{ localMeta.description }}">
+
+    <link rel="canonical" href="https://checkgialinhkien.com">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+
+    <meta property="og:title" content="{{ localMeta.og.title }}">
+    <meta property="og:site_name" content="{{ localMeta.og.title }}">
+    <meta property="og:description" content="{{ localMeta.og.description }}">
+    <meta property="og:url" content="{{ localMeta.og.url }}">
+    <meta property="og:image" content="{{ localMeta.og.image }}">
+    <meta property="og:type" content="website">
+
+    <link rel="dns-prefetch" href="//hanoicomputer.vn">
+    <link rel="dns-prefetch" href="//hanoinew.vn">
+    <link rel="dns-prefetch" href="//maihoang.com.vn">
+    <link rel="dns-prefetch" href="//phongvu.vn">
+    <link rel="dns-prefetch" href="//tandoanh.vn">
+    <link rel="dns-prefetch" href="//vitinhnaman.com">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/touch_icon_180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/touch_icon_152x152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/touch_icon_120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/touch_icon_76x76.png">
+    <link rel="icon" sizes="192x192" href="/touch_icon_192x192.png">
+
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    {% include 'shared/_header.html' %}
+    {% block content %}
+    {% endblock %}
+    {% include 'shared/_footer.html' %}
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

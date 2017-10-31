@@ -22,7 +22,9 @@ const config = {
 
 gulp.task('html', function () {
   gulp.src([`${config.src}/html/**/*.html`, `!${config.src}/html/shared/*`, `!${config.src}/html/layout/*`])
-      .pipe(nunjucks.compile())
+      .pipe(nunjucks.compile().on('error', function (err) {
+        gutil.log(`[${err.plugin}] There is an error from ${err.fileName}`);
+      }))
       .pipe(gulp.dest(config.public));
 });
 
@@ -34,7 +36,7 @@ gulp.task('css', function () {
   gulp.src(`${config.src}/scss/**/*.scss`)
       .pipe(scssLint({config: './.scss-lint.yml'}))
       .pipe(gulpif(gutil.env.development, sourcemaps.init({ loadMaps: true })))
-      .pipe(sass({ outputStyle: 'compressed' }))
+      .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
       .pipe(autoprefixer({ browsers: ['last 2 versions', 'ie > 9'], cascade: false }))
       .pipe(gulpif(gutil.env.development, sourcemaps.write('.')))
       .pipe(gulp.dest(`${config.public}/css`))

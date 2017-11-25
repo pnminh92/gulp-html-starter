@@ -93,4 +93,7 @@ gulp.task('serve', function () {
   watchBundler();
 });
 
+gulp.task('rev', function () {
+});
+
 gulp.task('default', ['html', 'css', 'js']);

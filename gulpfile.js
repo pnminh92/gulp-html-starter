@@ -94,6 +94,11 @@ gulp.task('serve', function () {
 });
 
 gulp.task('rev', function () {
-});
+
+gulp.task('rev', function () {
+  gulp.src([`${config.appPath}/*.{jpg,jpeg,png,gif,ico,js,css,map}`])
+      .pipe(rev())
+      .pipe(gulp.dest($config.appPath))
+})
 
 gulp.task('default', ['html', 'css', 'js']);
